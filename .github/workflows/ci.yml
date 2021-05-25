@@ -1,0 +1,61 @@
+name: Test integration
+
+on: 
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  test:
+    name: Run Flutter analyze and test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Setup Java Version
+        uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+
+      - name: Get flutter dependencies
+        run: flutter pub get
+
+      - name: Run Analyze code
+        run: flutter analyze
+
+      - name: Run Code format lib/
+        run: flutter format --dry-run --set-exit-if-changed lib/
+
+      - name: Run Code format test/
+        run: flutter format --dry-run --set-exit-if-changed test/
+
+      - name: Run test and collect coverage info
+        run: flutter test --coverage
+
+      - name: Export results test to JSON 
+        run: flutter test --machine > test-results.json
+
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: coverage/lcov.info
+          flags: unittests # optional
+          directory: coverage/
+          functionalities: html
+          name: codecov-umbrella # optional
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)
+
+      - uses: dorny/test-reporter@v1.4.2
+        with:
+          name: test-results
+          path: test-results.json
+          reporter: flutter-json
+          
+      - uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
+        with:
+          min_coverage: 0

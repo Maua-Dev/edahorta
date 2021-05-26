@@ -1,6 +1,7 @@
-# edahorta
+[![codecov](https://codecov.io/gh/Maua-Dev/edahorta/branch/master/graph/badge.svg?token=KQZR038ZTJ)](https://codecov.io/gh/Maua-Dev/edahorta)
+# É da Horta
 
-A new Flutter project.
+Projeto da Mauá Dev Commuity em conjunto com a Enactus Mauá
 
 ## Getting Started
 

@@ -1,3 +1,4 @@
+import 'package:edahorta/app/shared/widgets/appbar_logo_widget.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:edahorta/app/modules/selecao-produtos/selecaoProdutos_controller.dart';
 import 'package:edahorta/app/enumeration/mercadorias_enum.dart';
@@ -14,6 +15,7 @@ class SelecaoProdutosPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBarLogo(),
       body: Container(
         child: Column(
           children: <Widget>[

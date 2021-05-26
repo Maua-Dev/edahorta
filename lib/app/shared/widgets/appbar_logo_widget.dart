@@ -15,19 +15,15 @@ class AppBarLogo extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: AppBar(
-          automaticallyImplyLeading: true,
-          actions: actions,
-          flexibleSpace: Container(
-            height: MediaQuery.of(context).size.height * 0.1,
-            child: Opacity(opacity: 0.15, child: AppTheme.logoImage),
-          ),
-          backgroundColor: Colors.white,
-          elevation: 0,
-          // iconTheme: IconThemeData().copyWith(color: AppColors.primary),
+      child: AppBar(
+        automaticallyImplyLeading: true,
+        actions: actions,
+        flexibleSpace: Container(
+          height: MediaQuery.of(context).size.height * 0.1,
+          child: AppTheme.logoImage,
         ),
+        backgroundColor: Colors.white,
+        elevation: 0,
       ),
     );
   }

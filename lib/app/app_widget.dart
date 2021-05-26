@@ -9,9 +9,11 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'É da Horta',
       theme: ThemeData(
+          colorScheme: ColorScheme.light(),
+          scaffoldBackgroundColor: Colors.white,
           primaryColor: AppColors.primary,
           accentColor: AppColors.secondary,
-          buttonTheme: AppTheme.buttonTheme),
+          elevatedButtonTheme: AppTheme.elevatedButtonTheme),
     ).modular();
   }
 }

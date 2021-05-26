@@ -8,7 +8,6 @@ class SelecaoProdutosController = _SelecaoProdutosControllerBase
     with _$SelecaoProdutosController;
 
 abstract class _SelecaoProdutosControllerBase with Store {
-  @observable
   List<MercadoriasEnum> mercadorias = MercadoriasEnum.values;
 
   @action

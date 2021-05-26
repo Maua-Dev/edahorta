@@ -17,6 +17,7 @@ void main() {
 
   setUpAll(() {
     controller = SelecaoProdutosController();
+    print(controller);
   });
 
   test('[TEST] - action selectMercadoria passing args', () async {

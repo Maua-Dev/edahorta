@@ -5,7 +5,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 class SelecaoProdutosModule extends Module {
   @override
   final List<Bind> binds = [
-    Bind.lazySingleton((i) => SelecaoProdutosController()),
+    Bind.lazySingleton<SelecaoProdutosController>(
+        (i) => SelecaoProdutosController()),
   ];
 
   @override

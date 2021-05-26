@@ -5,8 +5,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:edahorta/app/modules/selecao-produtos/selecaoProdutos_module.dart';
 
 void main() {
+  var module = SelecaoProdutosModule();
+
   setUpAll(() {
-    initModule(SelecaoProdutosModule());
+    initModule(module);
   });
   test('[TEST] - instance controller', () {
     var controller = Modular.get<SelecaoProdutosController>();

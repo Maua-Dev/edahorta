@@ -1,4 +1,4 @@
-import 'package:edahorta/app/modules/selecao-produtos/selecaoProdutos_Page.dart';
+import 'package:edahorta/app/modules/selecao-produtos/selecaoProdutos_page.dart';
 import 'package:edahorta/app/modules/selecao-produtos/selecaoProdutos_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

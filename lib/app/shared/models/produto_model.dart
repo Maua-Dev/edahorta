@@ -1,8 +1,8 @@
-import 'package:edahorta/app/enums/mercadorias_enum.dart';
-import 'package:edahorta/app/enums/tipo_venda_enum.dart';
+import 'package:edahorta/app/enumerate/mercadorias_enum.dart';
+import 'package:edahorta/app/enumerate/tipo_venda_enum.dart';
 
 class Produto {
-  final Mercadorias mercadoria;
+  final MercadoriasEnum mercadoria;
   final TipoVenda tipoVenda;
   final double preco;
   final bool disponibilidade;

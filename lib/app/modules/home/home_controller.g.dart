@@ -9,35 +9,42 @@ part of 'home_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$HomeController on HomeControllerBase, Store {
-  final _$disponibilidadeAtom =
-      Atom(name: 'HomeControllerBase.disponibilidade');
+  final _$produtoAtom = Atom(name: 'HomeControllerBase.produto');
 
   @override
-  int get disponibilidade {
-    _$disponibilidadeAtom.reportRead();
-    return super.disponibilidade;
+  List<Produto> get produto {
+    _$produtoAtom.reportRead();
+    return super.produto;
   }
 
   @override
-  set disponibilidade(int value) {
-    _$disponibilidadeAtom.reportWrite(value, super.disponibilidade, () {
-      super.disponibilidade = value;
+  set produto(List<Produto> value) {
+    _$produtoAtom.reportWrite(value, super.produto, () {
+      super.produto = value;
     });
+  }
+
+  final _$getListaProdutosAsyncAction =
+      AsyncAction('HomeControllerBase.getListaProdutos');
+
+  @override
+  Future<void> getListaProdutos() {
+    return _$getListaProdutosAsyncAction.run(() => super.getListaProdutos());
   }
 
   final _$alterarDisponibilidadeAsyncAction =
       AsyncAction('HomeControllerBase.alterarDisponibilidade');
 
   @override
-  Future<void> alterarDisponibilidade(int disponibilidade) {
+  Future<void> alterarDisponibilidade() {
     return _$alterarDisponibilidadeAsyncAction
-        .run(() => super.alterarDisponibilidade(disponibilidade));
+        .run(() => super.alterarDisponibilidade());
   }
 
   @override
   String toString() {
     return '''
-disponibilidade: ${disponibilidade}
+produto: ${produto}
     ''';
   }
 }

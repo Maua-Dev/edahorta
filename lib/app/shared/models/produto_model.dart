@@ -17,5 +17,6 @@ class Produto {
         'mercadoria': mercadoria,
         'tipoVenda': tipoVenda,
         'preco': preco,
+        'disponibilidade': disponibilidade
       };
 }

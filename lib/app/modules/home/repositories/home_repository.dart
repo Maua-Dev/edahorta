@@ -1,6 +1,6 @@
 import 'package:edahorta/app/enums/mercadorias_enum.dart';
 import 'package:edahorta/app/enums/tipo_venda_enum.dart';
-import 'package:edahorta/app/modules/interfaces/home_interface_repository.dart';
+import 'package:edahorta/app/modules/home/repositories/home_repository_interface.dart';
 import 'package:edahorta/app/shared/models/produto_model.dart';
 
 class HomeRepository implements IHomeRepository {
@@ -13,8 +13,8 @@ class HomeRepository implements IHomeRepository {
   ];
 
   @override
-  List<Produto> getProduto() {
-    return produto;
+  Future<List<Produto>> getProduto() async {
+    return Future.value(produto);
   }
 
   @override

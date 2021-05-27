@@ -1,0 +1,1 @@
+enum Mercadorias { tomate, alface }

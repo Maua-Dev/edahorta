@@ -19,7 +19,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         builder: (context) => Text("Hi"),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: controller.alterarDisponibilidade,
+        onPressed: () {},
         child: Icon(Icons.add),
       ),
     );

@@ -24,6 +24,23 @@ mixin _$HomeController on HomeControllerBase, Store {
     });
   }
 
+  final _$trocaDisponibilidadeAtom =
+      Atom(name: 'HomeControllerBase.trocaDisponibilidade');
+
+  @override
+  int get trocaDisponibilidade {
+    _$trocaDisponibilidadeAtom.reportRead();
+    return super.trocaDisponibilidade;
+  }
+
+  @override
+  set trocaDisponibilidade(int value) {
+    _$trocaDisponibilidadeAtom.reportWrite(value, super.trocaDisponibilidade,
+        () {
+      super.trocaDisponibilidade = value;
+    });
+  }
+
   final _$getListaProdutosAsyncAction =
       AsyncAction('HomeControllerBase.getListaProdutos');
 
@@ -32,19 +49,37 @@ mixin _$HomeController on HomeControllerBase, Store {
     return _$getListaProdutosAsyncAction.run(() => super.getListaProdutos());
   }
 
-  final _$alterarDisponibilidadeAsyncAction =
-      AsyncAction('HomeControllerBase.alterarDisponibilidade');
+  final _$transformaBoolAsyncAction =
+      AsyncAction('HomeControllerBase.transformaBool');
 
   @override
-  Future<void> alterarDisponibilidade() {
-    return _$alterarDisponibilidadeAsyncAction
-        .run(() => super.alterarDisponibilidade());
+  Future<bool> transformaBool(int trocaDisponibilidade) {
+    return _$transformaBoolAsyncAction
+        .run(() => super.transformaBool(trocaDisponibilidade));
+  }
+
+  final _$trocarDisponibilidadeAsyncAction =
+      AsyncAction('HomeControllerBase.trocarDisponibilidade');
+
+  @override
+  Future<void> trocarDisponibilidade(int index, int trocaDisponibilidade) {
+    return _$trocarDisponibilidadeAsyncAction
+        .run(() => super.trocarDisponibilidade(index, trocaDisponibilidade));
+  }
+
+  final _$showLoadingAsyncAction =
+      AsyncAction('HomeControllerBase.showLoading');
+
+  @override
+  Future<void> showLoading() {
+    return _$showLoadingAsyncAction.run(() => super.showLoading());
   }
 
   @override
   String toString() {
     return '''
-produto: ${produto}
+produto: ${produto},
+trocaDisponibilidade: ${trocaDisponibilidade}
     ''';
   }
 }

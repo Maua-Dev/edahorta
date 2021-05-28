@@ -9,7 +9,17 @@ class HomeRepository implements IHomeRepository {
         mercadoria: MercadoriasEnum.Alface,
         tipoVenda: TipoVenda.maco,
         preco: 4.99,
-        disponibilidade: true)
+        disponibilidade: true),
+    Produto(
+        mercadoria: MercadoriasEnum.Brocolis,
+        tipoVenda: TipoVenda.quilo,
+        preco: 10.90,
+        disponibilidade: true),
+    Produto(
+        mercadoria: MercadoriasEnum.Cenoura,
+        tipoVenda: TipoVenda.porcao,
+        preco: 99.99,
+        disponibilidade: true),
   ];
 
   @override
@@ -18,11 +28,17 @@ class HomeRepository implements IHomeRepository {
   }
 
   @override
-  Future<bool> salvarDisponibilidade(int disponibilidade) async {
-    if (disponibilidade == 0) {
-      return false;
-    } else {
-      return true;
-    }
+  Future<List<Produto>> salvarDisponibilidade(
+      int index, bool transformado, List<Produto> produtos) async {
+    var produtoAlterado = produtos[index];
+    produtos.remove(index);
+    produtos.insert(
+        index,
+        Produto(
+            mercadoria: produtoAlterado.mercadoria,
+            tipoVenda: produtoAlterado.tipoVenda,
+            preco: produtoAlterado.preco,
+            disponibilidade: transformado));
+    return Future.value(produtos);
   }
 }

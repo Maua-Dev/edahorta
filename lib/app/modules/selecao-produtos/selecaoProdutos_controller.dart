@@ -1,4 +1,4 @@
-import 'package:edahorta/app/enumeration/mercadorias_enum.dart';
+import 'package:edahorta/app/enumerate/mercadorias_enum.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
 

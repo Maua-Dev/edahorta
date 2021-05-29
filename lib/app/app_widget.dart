@@ -8,6 +8,7 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       builder: asuka.builder,
       navigatorObservers: [asuka.asukaHeroController],
       title: 'É da Horta',

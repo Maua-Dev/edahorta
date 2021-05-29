@@ -36,9 +36,9 @@ mixin _$HomeController on HomeControllerBase, Store {
       AsyncAction('HomeControllerBase.trocarDisponibilidade');
 
   @override
-  Future<void> trocarDisponibilidade(int index, int trocaDisponibilidade) {
+  Future<void> trocarDisponibilidade(int index, bool value) {
     return _$trocarDisponibilidadeAsyncAction
-        .run(() => super.trocarDisponibilidade(index, trocaDisponibilidade));
+        .run(() => super.trocarDisponibilidade(index, value));
   }
 
   @override

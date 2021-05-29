@@ -24,10 +24,8 @@ abstract class HomeControllerBase with Store {
   }
 
   @action
-  Future<void> trocarDisponibilidade(
-      int index, int trocaDisponibilidade) async {
-    var transformado = trocaDisponibilidade == 0 ? false : true;
-    produto = await repository.salvarDisponibilidade(index, transformado);
+  Future<void> trocarDisponibilidade(int index, bool value) async {
+    produto = await repository.salvarDisponibilidade(index, value);
   }
 
   // @action

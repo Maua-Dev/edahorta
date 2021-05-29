@@ -41,7 +41,7 @@ void main() {
     ];
     when(repository.salvarDisponibilidade(0, true))
         .thenAnswer((_) async => retorno);
-    await homeController.trocarDisponibilidade(0, 1);
+    await homeController.trocarDisponibilidade(0, true);
     expect(homeController.produto[0].disponibilidade, true);
     expect(homeController.produto, retorno);
   });
@@ -55,7 +55,7 @@ void main() {
     ];
     when(repository.salvarDisponibilidade(0, false))
         .thenAnswer((_) async => retorno);
-    await homeController.trocarDisponibilidade(0, 0);
+    await homeController.trocarDisponibilidade(0, false);
     expect(homeController.produto[0].disponibilidade, false);
     expect(homeController.produto, retorno);
   });
@@ -70,7 +70,7 @@ void main() {
     when(repository.salvarDisponibilidade(0, false))
         .thenAnswer((_) async => retorno);
     var listBefore = homeController.produto;
-    await homeController.trocarDisponibilidade(0, 0);
+    await homeController.trocarDisponibilidade(0, false);
     print(listBefore.hashCode);
     expect(listBefore, isNot(homeController.produto));
     print(retorno.hashCode);

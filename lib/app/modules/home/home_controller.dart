@@ -10,6 +10,7 @@ class HomeController = HomeControllerBase with _$HomeController;
 abstract class HomeControllerBase with Store {
   final IHomeRepository repository;
   final LoadingService loadingService;
+
   HomeControllerBase(this.repository, this.loadingService) {
     getListaProdutos();
   }
@@ -17,34 +18,22 @@ abstract class HomeControllerBase with Store {
   @observable
   List<Produto> produto = [];
 
-  @observable
-  int trocaDisponibilidade = 0;
-
   @action
   Future<void> getListaProdutos() async {
     produto = await repository.getProduto();
   }
 
   @action
-  bool transformaBool(int trocaDisponibilidade) {
-    if (trocaDisponibilidade == 0) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-
-  @action
   Future<void> trocarDisponibilidade(
       int index, int trocaDisponibilidade) async {
-    var transformado = transformaBool(trocaDisponibilidade);
+    var transformado = trocaDisponibilidade == 0 ? false : true;
     produto = await repository.salvarDisponibilidade(index, transformado);
   }
 
-  @action
-  Future<void> showLoading() async {
-    loadingService.showLoading();
-    await Future.delayed(Duration(seconds: 5));
-    loadingService.dismissLoading();
-  }
+  // @action
+  // Future<void> showLoading() async {
+  //   loadingService.showLoading();
+  //   await Future.delayed(Duration(seconds: 5));
+  //   loadingService.dismissLoading();
+  // }
 }

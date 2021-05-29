@@ -24,23 +24,6 @@ mixin _$HomeController on HomeControllerBase, Store {
     });
   }
 
-  final _$trocaDisponibilidadeAtom =
-      Atom(name: 'HomeControllerBase.trocaDisponibilidade');
-
-  @override
-  int get trocaDisponibilidade {
-    _$trocaDisponibilidadeAtom.reportRead();
-    return super.trocaDisponibilidade;
-  }
-
-  @override
-  set trocaDisponibilidade(int value) {
-    _$trocaDisponibilidadeAtom.reportWrite(value, super.trocaDisponibilidade,
-        () {
-      super.trocaDisponibilidade = value;
-    });
-  }
-
   final _$getListaProdutosAsyncAction =
       AsyncAction('HomeControllerBase.getListaProdutos');
 
@@ -58,33 +41,10 @@ mixin _$HomeController on HomeControllerBase, Store {
         .run(() => super.trocarDisponibilidade(index, trocaDisponibilidade));
   }
 
-  final _$showLoadingAsyncAction =
-      AsyncAction('HomeControllerBase.showLoading');
-
-  @override
-  Future<void> showLoading() {
-    return _$showLoadingAsyncAction.run(() => super.showLoading());
-  }
-
-  final _$HomeControllerBaseActionController =
-      ActionController(name: 'HomeControllerBase');
-
-  @override
-  bool transformaBool(int trocaDisponibilidade) {
-    final _$actionInfo = _$HomeControllerBaseActionController.startAction(
-        name: 'HomeControllerBase.transformaBool');
-    try {
-      return super.transformaBool(trocaDisponibilidade);
-    } finally {
-      _$HomeControllerBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
   @override
   String toString() {
     return '''
-produto: ${produto},
-trocaDisponibilidade: ${trocaDisponibilidade}
+produto: ${produto}
     ''';
   }
 }

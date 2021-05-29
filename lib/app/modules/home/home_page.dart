@@ -16,7 +16,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Observer(
-        builder: (context) => Text("Hi"),
+        builder: (context) => Text('Hi'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},

@@ -29,6 +29,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/icons/
 
 scripts:
   mobx_watch: flutter pub run build_runner watch --delete-conflicting-outputs

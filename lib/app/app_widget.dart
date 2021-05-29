@@ -12,6 +12,7 @@ class AppWidget extends StatelessWidget {
       builder: asuka.builder,
       navigatorObservers: [asuka.asukaHeroController],
       title: 'É da Horta',
+      initialRoute: '/',
       theme: ThemeData(
         colorScheme: ColorScheme.light().copyWith(
             primary: AppColors.primary, secondary: AppColors.secondary),

@@ -26,7 +26,7 @@ abstract class HomeControllerBase with Store {
   }
 
   @action
-  Future<bool> transformaBool(int trocaDisponibilidade) async {
+  bool transformaBool(int trocaDisponibilidade) {
     if (trocaDisponibilidade == 0) {
       return false;
     } else {
@@ -37,9 +37,8 @@ abstract class HomeControllerBase with Store {
   @action
   Future<void> trocarDisponibilidade(
       int index, int trocaDisponibilidade) async {
-    var transformado = await transformaBool(trocaDisponibilidade);
-    produto =
-        await repository.salvarDisponibilidade(index, transformado, produto);
+    var transformado = transformaBool(trocaDisponibilidade);
+    produto = await repository.salvarDisponibilidade(index, transformado);
   }
 
   @action

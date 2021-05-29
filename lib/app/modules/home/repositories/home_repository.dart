@@ -29,16 +29,16 @@ class HomeRepository implements IHomeRepository {
 
   @override
   Future<List<Produto>> salvarDisponibilidade(
-      int index, bool transformado, List<Produto> produtos) async {
-    var produtoAlterado = produtos[index];
-    produtos.remove(index);
-    produtos.insert(
+      int index, bool transformado) async {
+    var produtoAlterado = produto[index];
+    produto.remove(index);
+    produto.insert(
         index,
         Produto(
             mercadoria: produtoAlterado.mercadoria,
             tipoVenda: produtoAlterado.tipoVenda,
             preco: produtoAlterado.preco,
             disponibilidade: transformado));
-    return Future.value(produtos);
+    return getProduto();
   }
 }

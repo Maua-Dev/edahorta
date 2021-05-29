@@ -49,15 +49,6 @@ mixin _$HomeController on HomeControllerBase, Store {
     return _$getListaProdutosAsyncAction.run(() => super.getListaProdutos());
   }
 
-  final _$transformaBoolAsyncAction =
-      AsyncAction('HomeControllerBase.transformaBool');
-
-  @override
-  Future<bool> transformaBool(int trocaDisponibilidade) {
-    return _$transformaBoolAsyncAction
-        .run(() => super.transformaBool(trocaDisponibilidade));
-  }
-
   final _$trocarDisponibilidadeAsyncAction =
       AsyncAction('HomeControllerBase.trocarDisponibilidade');
 
@@ -73,6 +64,20 @@ mixin _$HomeController on HomeControllerBase, Store {
   @override
   Future<void> showLoading() {
     return _$showLoadingAsyncAction.run(() => super.showLoading());
+  }
+
+  final _$HomeControllerBaseActionController =
+      ActionController(name: 'HomeControllerBase');
+
+  @override
+  bool transformaBool(int trocaDisponibilidade) {
+    final _$actionInfo = _$HomeControllerBaseActionController.startAction(
+        name: 'HomeControllerBase.transformaBool');
+    try {
+      return super.transformaBool(trocaDisponibilidade);
+    } finally {
+      _$HomeControllerBaseActionController.endAction(_$actionInfo);
+    }
   }
 
   @override

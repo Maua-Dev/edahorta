@@ -12,11 +12,4 @@ class Produto {
       required this.tipoVenda,
       required this.preco,
       required this.disponibilidade});
-
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'mercadoria': mercadoria,
-        'tipoVenda': tipoVenda,
-        'preco': preco,
-        'disponibilidade': disponibilidade
-      };
 }

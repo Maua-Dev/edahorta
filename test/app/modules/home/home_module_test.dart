@@ -13,6 +13,7 @@ void main() {
   test('Teste da injeção do HomeController', () {
     var homeController = Modular.get<HomeController>();
     expect(homeController.loadingService, isInstanceOf<LoadingService>());
+    print(homeController.toString());
   });
 
   test('Teste da injeção do HomeRepository', () {

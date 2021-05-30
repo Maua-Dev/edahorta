@@ -1,4 +1,5 @@
 import 'package:edahorta/app/modules/home/widgets/product_card_widget.dart';
+import 'package:edahorta/app/enumerate/mercadorias_enum.dart';
 import 'package:edahorta/app/shared/constants/app_colors.dart';
 import 'package:edahorta/app/shared/widgets/appbar_logo_widget.dart';
 import 'package:flutter/material.dart';
@@ -22,27 +23,40 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
-          child: Observer(
-            builder: (context) => ListView.separated(
+          child: Observer(builder: (context) {
+            if (controller.produto.isEmpty) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+            return ListView.separated(
               itemBuilder: (context, index) {
+                if (index == controller.produto.length) {
+                  return SizedBox(
+                    height: 50,
+                  );
+                }
                 return ProductCardWidget(
+                  key: ValueKey(
+                      '${controller.produto[index].mercadoria.name}-$index'),
                   onTap: () {
-                    Modular.to.pushNamed('/mercadorias');
+                    Modular.to.pushNamed('/mercadoria');
                   },
                   produto: controller.produto[index],
                   onChanged: (value) =>
                       controller.trocarDisponibilidade(index, value),
                 );
               },
-              itemCount: controller.produto.length,
+              itemCount: controller.produto.length + 1,
               separatorBuilder: (context, index) => SizedBox(
                 height: 8,
               ),
-            ),
-          ),
+            );
+          }),
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
+        key: ValueKey('adicionar'),
         onPressed: () {
           Modular.to.pushNamed('/selecaoProdutos');
         },

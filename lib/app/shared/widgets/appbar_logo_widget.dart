@@ -21,6 +21,7 @@ class AppBarLogo extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: AppBar(
+        key: ValueKey('AppBarLogo'),
         automaticallyImplyLeading: true,
         actions: actions,
         flexibleSpace: Container(

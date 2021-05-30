@@ -10,7 +10,8 @@ void main() {
 
   test('[TEST] - salvarDisponibilidade', () async {
     await homeRepository.salvarDisponibilidade(1, false);
+    var len = homeRepository.produto.length;
     expect(homeRepository.produto[1].disponibilidade, false);
-    expect(homeRepository.produto.length, 3);
+    expect(homeRepository.produto.length, len);
   });
 }

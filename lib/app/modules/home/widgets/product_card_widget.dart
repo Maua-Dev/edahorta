@@ -22,6 +22,7 @@ class ProductCardWidget extends StatelessWidget {
           contentPadding: EdgeInsets.all(16),
           onTap: onTap,
           trailing: Switch(
+            key: ValueKey('$key-Switch'),
             value: produto.disponibilidade,
             onChanged: onChanged,
           ),

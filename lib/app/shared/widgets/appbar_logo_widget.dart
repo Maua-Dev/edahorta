@@ -7,8 +7,13 @@ class AppBarLogo extends StatelessWidget with PreferredSizeWidget {
   final List<Widget>? actions;
   final void Function()? leadingPressed;
   final double? toolbarHeight;
-
-  AppBarLogo({Key? key, this.toolbarHeight, this.actions, this.leadingPressed})
+  final Color? backgroundColor;
+  AppBarLogo(
+      {Key? key,
+      this.toolbarHeight,
+      this.actions,
+      this.leadingPressed,
+      this.backgroundColor})
       : preferredSize = Size.fromHeight((toolbarHeight ?? kToolbarHeight) + 16),
         super(key: key);
 
@@ -16,13 +21,14 @@ class AppBarLogo extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: AppBar(
+        key: ValueKey('AppBarLogo'),
         automaticallyImplyLeading: true,
         actions: actions,
         flexibleSpace: Container(
           height: MediaQuery.of(context).size.height * 0.1,
           child: AppTheme.logoImage,
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: backgroundColor ?? Colors.white,
         elevation: 0,
       ),
     );

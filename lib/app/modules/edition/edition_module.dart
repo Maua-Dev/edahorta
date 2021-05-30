@@ -4,9 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 class EditionModule extends Module {
   @override
-  final List<Bind> binds = [
-    Bind.lazySingleton((i) => EditionController()),
-  ];
+  final List<Bind> binds = [];
 
   @override
   final List<ModularRoute> routes = [

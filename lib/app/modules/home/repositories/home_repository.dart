@@ -7,17 +7,37 @@ class HomeRepository implements IHomeRepository {
   List<Produto> produto = [
     Produto(
         mercadoria: MercadoriasEnum.Alface,
-        tipoVenda: TipoVenda.maco,
+        tipoVenda: TipoVendaEnum.Maco,
         preco: 4.99,
         disponibilidade: true),
     Produto(
         mercadoria: MercadoriasEnum.Brocolis,
-        tipoVenda: TipoVenda.quilo,
+        tipoVenda: TipoVendaEnum.Quilo,
         preco: 10.90,
         disponibilidade: true),
     Produto(
         mercadoria: MercadoriasEnum.Cenoura,
-        tipoVenda: TipoVenda.porcao,
+        tipoVenda: TipoVendaEnum.Porcao,
+        preco: 99.99,
+        disponibilidade: true),
+    Produto(
+        mercadoria: MercadoriasEnum.Cenoura,
+        tipoVenda: TipoVendaEnum.Porcao,
+        preco: 99.99,
+        disponibilidade: true),
+    Produto(
+        mercadoria: MercadoriasEnum.Cenoura,
+        tipoVenda: TipoVendaEnum.Porcao,
+        preco: 99.99,
+        disponibilidade: true),
+    Produto(
+        mercadoria: MercadoriasEnum.Cenoura,
+        tipoVenda: TipoVendaEnum.Porcao,
+        preco: 99.99,
+        disponibilidade: true),
+    Produto(
+        mercadoria: MercadoriasEnum.Cenoura,
+        tipoVenda: TipoVendaEnum.Porcao,
         preco: 99.99,
         disponibilidade: true),
   ];
@@ -31,7 +51,7 @@ class HomeRepository implements IHomeRepository {
   Future<List<Produto>> salvarDisponibilidade(
       int index, bool transformado) async {
     var produtoAlterado = produto[index];
-    produto.remove(index);
+    produto.removeAt(index);
     produto.insert(
         index,
         Produto(

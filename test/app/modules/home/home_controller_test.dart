@@ -17,7 +17,7 @@ void main() {
   var array = [
     Produto(
         mercadoria: MercadoriasEnum.Cenoura,
-        tipoVenda: TipoVenda.porcao,
+        tipoVenda: TipoVendaEnum.Porcao,
         preco: 99.99,
         disponibilidade: true),
   ];
@@ -35,7 +35,7 @@ void main() {
     var retorno = [
       Produto(
           mercadoria: MercadoriasEnum.Cenoura,
-          tipoVenda: TipoVenda.porcao,
+          tipoVenda: TipoVendaEnum.Porcao,
           preco: 99.99,
           disponibilidade: true),
     ];
@@ -49,7 +49,7 @@ void main() {
     var retorno = [
       Produto(
           mercadoria: MercadoriasEnum.Cenoura,
-          tipoVenda: TipoVenda.porcao,
+          tipoVenda: TipoVendaEnum.Porcao,
           preco: 99.99,
           disponibilidade: false),
     ];
@@ -63,7 +63,7 @@ void main() {
     var retorno = [
       Produto(
           mercadoria: MercadoriasEnum.Cenoura,
-          tipoVenda: TipoVenda.porcao,
+          tipoVenda: TipoVendaEnum.Porcao,
           preco: 99.99,
           disponibilidade: false),
     ];

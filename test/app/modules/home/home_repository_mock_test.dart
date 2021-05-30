@@ -11,5 +11,6 @@ void main() {
   test('[TEST] - salvarDisponibilidade', () async {
     await homeRepository.salvarDisponibilidade(1, false);
     expect(homeRepository.produto[1].disponibilidade, false);
+    expect(homeRepository.produto.length, 3);
   });
 }

@@ -1,3 +1,4 @@
+import 'package:edahorta/app/modules/edition/edition_module.dart';
 import 'package:edahorta/app/shared/services/loading_service.dart';
 import 'package:edahorta/app/modules/selecao-produtos/selecaoProdutos_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -16,6 +17,10 @@ class AppModule extends Module {
     ModuleRoute(
       '/selecaoProdutos',
       module: SelecaoProdutosModule(),
+    ),
+    ModuleRoute(
+      '/mercadoria',
+      module: EditionModule(),
     ),
   ];
 }

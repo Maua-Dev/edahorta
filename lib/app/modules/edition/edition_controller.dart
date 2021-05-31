@@ -1,15 +1,40 @@
+import 'package:edahorta/app/enumerate/tipo_venda_enum.dart';
+import 'package:edahorta/app/shared/models/produto_model.dart';
 import 'package:mobx/mobx.dart';
+
+import 'repositories/edition_repository_interface.dart';
 
 part 'edition_controller.g.dart';
 
 class EditionController = _EditionControllerBase with _$EditionController;
 
 abstract class _EditionControllerBase with Store {
+  final IEditionRepository repository;
   @observable
-  int value = 0;
+  Produto produto;
+
+  _EditionControllerBase(this.repository, this.produto);
 
   @action
-  void increment() {
-    value++;
+  void alterarPreco(double preco) {
+    produto = Produto(
+        mercadoria: produto.mercadoria,
+        tipoVenda: produto.tipoVenda,
+        preco: preco,
+        disponibilidade: produto.disponibilidade);
+  }
+
+  @action
+  void alterarTipoVenda(TipoVendaEnum tipoVenda) {
+    produto = Produto(
+        mercadoria: produto.mercadoria,
+        tipoVenda: tipoVenda,
+        preco: produto.preco,
+        disponibilidade: produto.disponibilidade);
+  }
+
+  @action
+  Future<void> salvarProduto() async {
+    produto = await repository.salvarProduto(produto);
   }
 }

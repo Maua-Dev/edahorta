@@ -1,8 +1,8 @@
 name: Test integration
 
-on: 
+on:
   pull_request:
-    branches: [ master, develop ]
+    branches: [master, develop]
 
 jobs:
   test:
@@ -11,11 +11,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
+
       - name: Setup Java Version
         uses: actions/setup-java@v1
         with:
-          java-version: '12.x'
+          java-version: "12.x"
 
       - uses: subosito/flutter-action@v1
         with:
@@ -36,10 +36,11 @@ jobs:
       - name: Run test and collect coverage info
         run: flutter test --coverage
 
-      - name: Export results test to JSON 
+      - name: Export results test to JSON
         run: flutter test --machine > test-results.json
 
-      - uses: codecov/codecov-action@v1
+      - name: Run Codecov Reporter
+        uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           files: coverage/lcov.info
@@ -50,12 +51,18 @@ jobs:
           fail_ci_if_error: true # optional (default = false)
           verbose: true # optional (default = false)
 
-      - uses: dorny/test-reporter@v1
+      - name: Run codacy-coverage-reporter
+        uses: codacy/codacy-coverage-reporter-action@v1
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: coverage/lcov.info
+      - name: Run Test Reporter
+        uses: dorny/test-reporter@v1
         with:
           name: test-results
           path: test-results.json
           reporter: flutter-json
-          
+
       - uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
         with:
-          min_coverage: 0
+          min_coverage: 80

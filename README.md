@@ -1,4 +1,5 @@
 [![codecov](https://codecov.io/gh/Maua-Dev/edahorta/branch/master/graph/badge.svg?token=KQZR038ZTJ)](https://codecov.io/gh/Maua-Dev/edahorta)
+[![CodeFactor](https://www.codefactor.io/repository/github/maua-dev/edahorta/badge)](https://www.codefactor.io/repository/github/maua-dev/edahorta)
 # É da Horta
 
 Projeto da Mauá Dev Commuity em conjunto com a Enactus Mauá

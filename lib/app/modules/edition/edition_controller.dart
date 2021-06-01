@@ -13,7 +13,7 @@ abstract class _EditionControllerBase with Store {
   @observable
   Produto produto;
 
-  _EditionControllerBase(this.repository, this.produto);
+  _EditionControllerBase({required this.repository, required this.produto});
 
   @action
   void alterarPreco(double preco) {

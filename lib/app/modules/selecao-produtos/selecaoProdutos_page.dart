@@ -28,9 +28,6 @@ class SelecaoProdutosPageState
                   child: ListView.separated(
                       shrinkWrap: true,
                       itemBuilder: (context, index) => Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
-                            ),
                             child: ListTile(
                               key: ValueKey(
                                   '${controller.mercadorias[index].name}'),

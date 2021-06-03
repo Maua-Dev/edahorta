@@ -1,13 +1,7 @@
 import 'dart:async';
-
-import 'package:edahorta/app/modules/selecao-produtos/selecaoProdutos_module.dart';
-import 'package:edahorta/app/modules/selecao-produtos/selecaoProdutos_page.dart';
 import 'package:edahorta/app/shared/constants/app_theme.dart';
-import 'package:edahorta/app/shared/widgets/appbar_logo_widget.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:edahorta/app/modules/selecao-produtos/selecaoProdutos_controller.dart';
-import 'package:edahorta/app/enumerate/mercadorias_enum.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -17,10 +11,9 @@ class SplashScreen extends StatefulWidget {
 class SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Timer(Duration(seconds: 2), () {
-      Navigator.pushNamed(context, "selecaoProdutos");
+      Modular.to.pushNamed('/home');
     });
   }
 
@@ -28,13 +21,6 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFFffffff), Color(0xFF82bc23)]),
-            //colors: [Color(0xFF61FF47), Color(0xFF666666)]),
-      ),
       child: Center(
         child: AppTheme.logoImage,
       ),

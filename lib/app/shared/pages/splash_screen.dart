@@ -32,7 +32,8 @@ class SplashScreenState extends State<SplashScreen> {
         gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xFF61FF47), Color(0xFF666666)]),
+            colors: [Color(0xFFffffff), Color(0xFF82bc23)]),
+            //colors: [Color(0xFF61FF47), Color(0xFF666666)]),
       ),
       child: Center(
         child: AppTheme.logoImage,

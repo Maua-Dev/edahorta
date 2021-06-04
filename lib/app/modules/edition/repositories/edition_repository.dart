@@ -15,6 +15,7 @@ class EditionRepository implements IEditionRepository {
         tipoVenda: TipoVendaEnum.Quilo,
         preco: 10.90,
         disponibilidade: true),
+        
   ];
 
   @override

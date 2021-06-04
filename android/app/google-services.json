@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "818251970507",
+    "project_id": "e-da-horta",
+    "storage_bucket": "e-da-horta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818251970507:android:0844859a97d9a7832ca84e",
+        "android_client_info": {
+          "package_name": "com.mauadev.horta.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818251970507-j6gp455gl419rpa2umu5k7dhvqjt539h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsLv-Gark4gu63tlyeDQP6xK_Hrg2yPuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818251970507-j6gp455gl419rpa2umu5k7dhvqjt539h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -17,7 +17,6 @@ class SplashScreenState extends State<SplashScreen> {
     });
   }
 
-  final ScrollController scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Container(

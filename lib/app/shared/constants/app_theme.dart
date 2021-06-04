@@ -17,5 +17,8 @@ class AppTheme {
       ),
       elevation: 8,
       clipBehavior: Clip.antiAlias);
-  static final Image logoImage = Image.asset('assets/logoName.png');
+  static final Image logoImage = Image.asset(
+    'assets/logoName.png',
+    key: ValueKey('logoImage'),
+  );
 }

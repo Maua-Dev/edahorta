@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.edahorta">
+    package="com.mauadev.horta.dev">
    <application
         android:label="edahorta"
         android:icon="@mipmap/ic_launcher">

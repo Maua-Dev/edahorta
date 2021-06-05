@@ -54,33 +54,25 @@ class EditionPageState extends State<EditionPage> {
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40), topRight: Radius.circular(40)),
               child: Container(
-                  padding: EdgeInsets.only(top: 64),
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  color: Colors.white,
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 290,
-                        height: 85,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey[300]!),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text('Preço: '),
-                            Expanded(
-                              child: TextField(
-                                decoration:
-                                    InputDecoration(labelText: 'vai se fuder'),
-                              ),
-                            ),
-                          ],
+                padding: EdgeInsets.only(top: 64),
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.6,
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(left: 32, right: 32, top: 8),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: 'Preço',
+                          border: OutlineInputBorder(),
+                          suffixIcon: Icon(Icons.close),
                         ),
                       ),
-                    ],
-                  )),
+                    )
+                  ],
+                ),
+              ),
             ),
           ),
           Positioned(

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:edahorta/app/enumerate/mercadorias_enum.dart';
 import 'package:edahorta/app/enumerate/tipo_venda_enum.dart';
 import 'package:edahorta/app/modules/edition/repositories/edition_repository_interface.dart';

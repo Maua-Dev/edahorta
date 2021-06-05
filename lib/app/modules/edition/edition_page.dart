@@ -1,10 +1,9 @@
 import 'package:edahorta/app/shared/constants/app_colors.dart';
-import 'package:edahorta/app/shared/models/produto_model.dart';
+
 import 'package:edahorta/app/shared/widgets/appbar_logo_widget.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:edahorta/app/modules/edition/edition_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:edahorta/app/enumerate/mercadorias_enum.dart';
 
 import 'widgets/image_widget.dart';
 
@@ -17,8 +16,6 @@ class EditionPage extends StatefulWidget {
 
 class EditionPageState extends State<EditionPage> {
   final EditionController controller = Modular.get();
-
-  EditionPageState();
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +59,13 @@ class EditionPageState extends State<EditionPage> {
                   children: [
                     Container(
                       padding: EdgeInsets.only(left: 32, right: 32, top: 8),
-                      child: TextField(
+                      child: TextFormField(
+                        controller: controller.textController,
+                        onChanged: (value) {
+                          controller.alterarPreco(
+                              controller.textController.numberValue);
+                        },
+                        keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           labelText: 'Preço',
                           border: OutlineInputBorder(),

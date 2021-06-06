@@ -3,12 +3,12 @@ name: CI/CD Prod
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 jobs:
   release:
     name: Create Release
-    runs-on: ubuntu-latest    
-    steps:          
+    runs-on: ubuntu-latest
+    steps:
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1

@@ -6,6 +6,8 @@ import 'package:edahorta/app/modules/edition/edition_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/image_widget.dart';
+import 'widgets/price_change_widget.dart';
+import 'widgets/save_button_widget.dart';
 
 class EditionPage extends StatefulWidget {
   final String title;
@@ -57,22 +59,8 @@ class EditionPageState extends State<EditionPage> {
                 color: Colors.white,
                 child: Column(
                   children: [
-                    Container(
-                      padding: EdgeInsets.only(left: 32, right: 32, top: 8),
-                      child: TextFormField(
-                        controller: controller.textController,
-                        onChanged: (value) {
-                          controller.alterarPreco(
-                              controller.textController.numberValue);
-                        },
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                          labelText: 'Preço',
-                          border: OutlineInputBorder(),
-                          suffixIcon: Icon(Icons.close),
-                        ),
-                      ),
-                    )
+                    PriceChangeWidget(controller: controller),
+                    SaveButtonWidget(controller: controller)
                   ],
                 ),
               ),
@@ -85,7 +73,7 @@ class EditionPageState extends State<EditionPage> {
               alignment: Alignment.topRight,
               child: ImageWidget(controller: controller),
             ),
-          )
+          ),
         ],
       ),
     );

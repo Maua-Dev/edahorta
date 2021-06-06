@@ -58,5 +58,4 @@ jobs:
           token: ${{secrets.FIREBASE_TOKEN}}
           groups: mauá-dev, enactus
           file: apk/release/app-arm64-v8a-release.apk
-          debug: true  
-          
+          debug: true

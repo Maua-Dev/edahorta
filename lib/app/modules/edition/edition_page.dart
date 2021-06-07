@@ -1,13 +1,12 @@
 import 'package:edahorta/app/shared/constants/app_colors.dart';
-
 import 'package:edahorta/app/shared/widgets/appbar_logo_widget.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:edahorta/app/modules/edition/edition_controller.dart';
 import 'package:flutter/material.dart';
-
 import 'widgets/image_widget.dart';
 import 'widgets/price_change_widget.dart';
 import 'widgets/save_button_widget.dart';
+import 'widgets/tipo_venda_change_widget.dart';
 
 class EditionPage extends StatefulWidget {
   final String title;
@@ -60,7 +59,8 @@ class EditionPageState extends State<EditionPage> {
                 child: Column(
                   children: [
                     PriceChangeWidget(controller: controller),
-                    SaveButtonWidget(controller: controller)
+                    TipoVendaChangeWidget(controller: controller),
+                    SaveButtonWidget(controller: controller),
                   ],
                 ),
               ),

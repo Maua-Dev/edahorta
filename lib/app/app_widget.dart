@@ -8,11 +8,11 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'É da Horta',
+      initialRoute: '/',
       debugShowCheckedModeBanner: false,
       builder: asuka.builder,
       navigatorObservers: [asuka.asukaHeroController],
-      title: 'É da Horta',
-      initialRoute: '/',
       theme: ThemeData(
         colorScheme: ColorScheme.light().copyWith(
             primary: AppColors.primary, secondary: AppColors.secondary),

@@ -15,7 +15,7 @@ void main() {
   IHomeRepository repository = MockIHomeRepository();
   late HomeController homeController;
   var array = [
-    Produto(
+    ProdutoModel(
         mercadoria: MercadoriasEnum.Cenoura,
         tipoVenda: TipoVendaEnum.Porcao,
         preco: 99.99,
@@ -33,7 +33,7 @@ void main() {
 
   test('Teste do trocarDisponibilidade args true', () async {
     var retorno = [
-      Produto(
+      ProdutoModel(
           mercadoria: MercadoriasEnum.Cenoura,
           tipoVenda: TipoVendaEnum.Porcao,
           preco: 99.99,
@@ -47,7 +47,7 @@ void main() {
   });
   test('Teste do trocarDisponibilidade args false', () async {
     var retorno = [
-      Produto(
+      ProdutoModel(
           mercadoria: MercadoriasEnum.Cenoura,
           tipoVenda: TipoVendaEnum.Porcao,
           preco: 99.99,
@@ -61,7 +61,7 @@ void main() {
   });
   test('Teste do trocarDisponibilidade args hasCode Change', () async {
     var retorno = [
-      Produto(
+      ProdutoModel(
           mercadoria: MercadoriasEnum.Cenoura,
           tipoVenda: TipoVendaEnum.Porcao,
           preco: 99.99,

@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Teste Salvar Produto', () async {
-    var produto = Produto(
+    var produto = ProdutoModel(
         mercadoria: MercadoriasEnum.Alface,
         tipoVenda: TipoVendaEnum.Maco,
         preco: 2,
@@ -18,7 +18,7 @@ void main() {
   });
 
   test('Teste Salvar Produto 2', () async {
-    var produto = Produto(
+    var produto = ProdutoModel(
         mercadoria: MercadoriasEnum.Brocolis,
         tipoVenda: TipoVendaEnum.Maco,
         preco: 2,

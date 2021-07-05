@@ -15,7 +15,7 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: unnecessary_parenthesis
 
-class _FakeProduto extends _i1.Fake implements _i2.Produto {}
+class _FakeProdutoModel extends _i1.Fake implements _i2.ProdutoModel {}
 
 /// A class which mocks [IEditionRepository].
 ///
@@ -27,8 +27,8 @@ class MockIEditionRepository extends _i1.Mock
   }
 
   @override
-  _i4.Future<_i2.Produto> salvarProduto(_i2.Produto? produto) =>
+  _i4.Future<_i2.ProdutoModel> salvarProduto(_i2.ProdutoModel? produto) =>
       (super.noSuchMethod(Invocation.method(#salvarProduto, [produto]),
-              returnValue: Future<_i2.Produto>.value(_FakeProduto()))
-          as _i4.Future<_i2.Produto>);
+              returnValue: Future<_i2.ProdutoModel>.value(_FakeProdutoModel()))
+          as _i4.Future<_i2.ProdutoModel>);
 }

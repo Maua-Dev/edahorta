@@ -9,10 +9,8 @@ import 'repositories/edition_repository_interface.dart';
 class EditionModule extends Module {
   @override
   final List<Bind> binds = [
-    Bind.lazySingleton((i) => EditionController(
-          repository: i(),
-          produto: i.args!.data as Produto,
-        )),
+    Bind.lazySingleton((i) =>
+        EditionController((i.args!.data) as ProdutoModel?, repository: i())),
     Bind.lazySingleton<IEditionRepository>((i) => EditionRepository()),
   ];
 

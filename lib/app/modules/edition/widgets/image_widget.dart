@@ -1,14 +1,11 @@
-import 'package:edahorta/app/modules/edition/edition_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:edahorta/app/enumerate/mercadorias_enum.dart';
 
 class ImageWidget extends StatelessWidget {
+  final String pathAsset;
   const ImageWidget({
     Key? key,
-    required this.controller,
+    required this.pathAsset,
   }) : super(key: key);
-
-  final EditionController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +16,7 @@ class ImageWidget extends StatelessWidget {
         height: 168,
         width: 173,
         child: Image.asset(
-          controller.produto.mercadoria.pathAsset,
+          pathAsset,
           fit: BoxFit.fill,
         ),
       ),

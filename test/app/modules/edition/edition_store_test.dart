@@ -11,17 +11,19 @@ import 'edition_store_test.mocks.dart';
 
 @GenerateMocks([IEditionRepository])
 void main() {
-  var produto = Produto(
-      mercadoria: MercadoriasEnum.Batata,
-      tipoVenda: TipoVendaEnum.Quilo,
-      preco: 12,
-      disponibilidade: true);
+  late ProdutoModel produto;
   var repository = MockIEditionRepository();
 
   late EditionController store;
 
-  setUpAll(() {
-    store = EditionController(produto: produto, repository: repository);
+  setUp(() {
+    produto = ProdutoModel(
+        mercadoria: MercadoriasEnum.Batata,
+        tipoVenda: TipoVendaEnum.Quilo,
+        preco: 12,
+        disponibilidade: true);
+    store = EditionController(produto, repository: repository);
+    print(store.toString());
   });
 
   test('teste alteraçao de preço', () async {
@@ -37,7 +39,7 @@ void main() {
   });
 
   test('salvar produto', () async {
-    var retorno = Produto(
+    var retorno = ProdutoModel(
         mercadoria: MercadoriasEnum.Batata,
         tipoVenda: TipoVendaEnum.Maco,
         preco: 8,

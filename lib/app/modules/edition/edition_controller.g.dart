@@ -12,13 +12,13 @@ mixin _$EditionController on _EditionControllerBase, Store {
   final _$produtoAtom = Atom(name: '_EditionControllerBase.produto');
 
   @override
-  Produto get produto {
+  ProdutoModel get produto {
     _$produtoAtom.reportRead();
     return super.produto;
   }
 
   @override
-  set produto(Produto value) {
+  set produto(ProdutoModel value) {
     _$produtoAtom.reportWrite(value, super.produto, () {
       super.produto = value;
     });

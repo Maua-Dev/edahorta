@@ -32,6 +32,43 @@ flutter:
   assets:
     - assets/
     - assets/icons/
-
+  fonts:
+    - family: Rubik
+      fonts:        
+        - asset: assets/fonts/static/Rubik-Light.ttf
+          weight: 300
+        - asset: assets/fonts/static/Rubik-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/static/Rubik-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/static/Rubik-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/static/Rubik-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/static/Rubik-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/static/Rubik-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/static/Rubik-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/static/Rubik-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/static/Rubik-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/static/Rubik-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/static/Rubik-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/static/Rubik-Black.ttf
+          weight: 900
+        - asset: assets/fonts/static/Rubik-BlackItalic.ttf
+          weight: 900
+          style: italic
 scripts:
   mobx_watch: flutter pub run build_runner watch --delete-conflicting-outputs

@@ -1,3 +1,4 @@
+import 'package:edahorta/app/enumerate/mercadorias_enum.dart';
 import 'package:edahorta/app/enumerate/tipo_venda_enum.dart';
 import 'package:edahorta/app/shared/models/produto_model.dart';
 import 'package:extended_masked_text/extended_masked_text.dart';
@@ -11,31 +12,31 @@ part 'edition_controller.g.dart';
 class EditionController = _EditionControllerBase with _$EditionController;
 
 abstract class _EditionControllerBase with Store {
-  final textController = MoneyMaskedTextController(leftSymbol: 'R\$ ');
+  final textController =
+      MoneyMaskedTextController(leftSymbol: 'R\$ ', initialValue: 0);
   final IEditionRepository repository;
   @observable
-  Produto produto;
+  ProdutoModel produto = ProdutoModel(
+      disponibilidade: true,
+      mercadoria: MercadoriasEnum.Outro,
+      preco: 0,
+      tipoVenda: TipoVendaEnum.Unidade);
 
-  _EditionControllerBase({required this.repository, required this.produto}) {
-    textController.updateValue(produto.preco);
+  _EditionControllerBase(ProdutoModel? value, {required this.repository}) {
+    if (value != null) {
+      produto = value;
+      textController.updateValue(produto.preco);
+    }
   }
 
   @action
   void alterarPreco(double preco) {
-    produto = Produto(
-        mercadoria: produto.mercadoria,
-        tipoVenda: produto.tipoVenda,
-        preco: preco,
-        disponibilidade: produto.disponibilidade);
+    produto = produto.copyWith(preco: preco);
   }
 
   @action
   void alterarTipoVenda(TipoVendaEnum tipoVenda) {
-    produto = Produto(
-        mercadoria: produto.mercadoria,
-        tipoVenda: tipoVenda,
-        preco: produto.preco,
-        disponibilidade: produto.disponibilidade);
+    produto = produto.copyWith(tipoVenda: tipoVenda);
   }
 
   @action

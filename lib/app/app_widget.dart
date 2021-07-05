@@ -14,6 +14,7 @@ class AppWidget extends StatelessWidget {
       builder: asuka.builder,
       navigatorObservers: [asuka.asukaHeroController],
       theme: ThemeData(
+        fontFamily: 'Rubik',
         colorScheme: ColorScheme.light().copyWith(
             primary: AppColors.primary, secondary: AppColors.secondary),
         scaffoldBackgroundColor: Colors.white,

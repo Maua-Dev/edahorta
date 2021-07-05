@@ -7,7 +7,8 @@ enum MercadoriasEnum {
   CouveFlor,
   Gengibre,
   Salsa,
-  Tomate
+  Tomate,
+  Outro
 }
 
 extension MercadoriasEnumExtension on MercadoriasEnum {
@@ -31,6 +32,8 @@ extension MercadoriasEnumExtension on MercadoriasEnum {
         return 'Salsa';
       case MercadoriasEnum.Tomate:
         return 'Tomate';
+      case MercadoriasEnum.Outro:
+        return '';
     }
   }
 
@@ -54,6 +57,8 @@ extension MercadoriasEnumExtension on MercadoriasEnum {
         return 'assets/icons/salsa.png';
       case MercadoriasEnum.Tomate:
         return 'assets/icons/tomate.png';
+      case MercadoriasEnum.Outro:
+        return '';
     }
   }
 }

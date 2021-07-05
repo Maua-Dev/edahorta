@@ -40,7 +40,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                   key: ValueKey(
                       '${controller.produto[index].mercadoria.name}-$index'),
                   onTap: () {
-                    Modular.to.pushNamed('/mercadoria');
+                    Modular.to.pushNamed('/mercadoria',
+                        arguments: controller.produto[index]);
                   },
                   produto: controller.produto[index],
                   onChanged: (value) =>

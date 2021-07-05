@@ -16,7 +16,7 @@ abstract class HomeControllerBase with Store {
   }
 
   @observable
-  List<Produto> produto = [];
+  List<ProdutoModel> produto = [];
 
   @action
   Future<void> getListaProdutos() async {

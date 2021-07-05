@@ -12,13 +12,13 @@ mixin _$HomeController on HomeControllerBase, Store {
   final _$produtoAtom = Atom(name: 'HomeControllerBase.produto');
 
   @override
-  List<Produto> get produto {
+  List<ProdutoModel> get produto {
     _$produtoAtom.reportRead();
     return super.produto;
   }
 
   @override
-  set produto(List<Produto> value) {
+  set produto(List<ProdutoModel> value) {
     _$produtoAtom.reportWrite(value, super.produto, () {
       super.produto = value;
     });

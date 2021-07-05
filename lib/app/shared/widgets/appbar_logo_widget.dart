@@ -1,3 +1,4 @@
+import 'package:edahorta/app/shared/constants/app_colors.dart';
 import 'package:edahorta/app/shared/constants/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -22,8 +23,10 @@ class AppBarLogo extends StatelessWidget with PreferredSizeWidget {
     return SafeArea(
       child: AppBar(
         key: ValueKey('AppBarLogo'),
-        automaticallyImplyLeading: true,
         actions: actions,
+        iconTheme: IconThemeData(
+          color: backgroundColor == null ? AppColors.primary : Colors.white,
+        ),
         flexibleSpace: Container(
           height: MediaQuery.of(context).size.height * 0.1,
           child: AppTheme.logoImage,

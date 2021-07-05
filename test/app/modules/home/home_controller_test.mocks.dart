@@ -28,17 +28,19 @@ class MockIHomeRepository extends _i1.Mock implements _i3.IHomeRepository {
   }
 
   @override
-  _i4.Future<List<_i5.Produto>> getProduto() =>
+  _i4.Future<List<_i5.ProdutoModel>> getProduto() =>
       (super.noSuchMethod(Invocation.method(#getProduto, []),
-              returnValue: Future<List<_i5.Produto>>.value(<_i5.Produto>[]))
-          as _i4.Future<List<_i5.Produto>>);
+              returnValue:
+                  Future<List<_i5.ProdutoModel>>.value(<_i5.ProdutoModel>[]))
+          as _i4.Future<List<_i5.ProdutoModel>>);
   @override
-  _i4.Future<List<_i5.Produto>> salvarDisponibilidade(
+  _i4.Future<List<_i5.ProdutoModel>> salvarDisponibilidade(
           int? index, bool? transformado) =>
       (super.noSuchMethod(
               Invocation.method(#salvarDisponibilidade, [index, transformado]),
-              returnValue: Future<List<_i5.Produto>>.value(<_i5.Produto>[]))
-          as _i4.Future<List<_i5.Produto>>);
+              returnValue:
+                  Future<List<_i5.ProdutoModel>>.value(<_i5.ProdutoModel>[]))
+          as _i4.Future<List<_i5.ProdutoModel>>);
 }
 
 /// A class which mocks [LoadingService].

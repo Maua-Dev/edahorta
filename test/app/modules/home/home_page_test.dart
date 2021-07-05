@@ -19,13 +19,19 @@ void main() {
   });
   testWidgets('[TEST] - Teste page pump', (tester) async {
     await tester.pumpWidget(buildTestableWidget(HomePage()));
+    await tester.pump();
 
     final material = find.byKey(ValueKey('AppBarLogo'));
     expect(material, findsOneWidget);
+    final listview = find.byType(ListView);
+    await tester.drag(listview, Offset(0, -500));
+    await tester.pump();
   });
 
   testWidgets('[TEST] - Page HomePage tap item', (tester) async {
-    when(navigatorMock.pushNamed('/mercadoria')).thenAnswer((_) async => {});
+    when(navigatorMock.pushNamed('/mercadoria',
+            arguments: anyNamed('arguments')))
+        .thenAnswer((_) async => {});
 
     await tester.pumpWidget(buildTestableWidget(HomePage()));
 
@@ -34,7 +40,9 @@ void main() {
     final alface = find.byKey(ValueKey('Alface-0'));
     expect(alface, findsOneWidget);
     await tester.tap(alface);
-    verify(navigatorMock.pushNamed('/mercadoria')).called(1);
+    verify(navigatorMock.pushNamed('/mercadoria',
+            arguments: anyNamed('arguments')))
+        .called(1);
   });
   testWidgets('[TEST] - Page HomePage tap FAB', (tester) async {
     when(navigatorMock.pushNamed('/selecaoProdutos'))

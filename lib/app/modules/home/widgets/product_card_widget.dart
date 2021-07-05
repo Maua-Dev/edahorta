@@ -4,7 +4,7 @@ import 'package:edahorta/app/enumerate/mercadorias_enum.dart';
 import 'package:edahorta/app/enumerate/tipo_venda_enum.dart';
 
 class ProductCardWidget extends StatelessWidget {
-  final Produto produto;
+  final ProdutoModel produto;
   final void Function(bool value) onChanged;
   final void Function() onTap;
   const ProductCardWidget({

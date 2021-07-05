@@ -22,14 +22,18 @@ void main() {
 
   test('[TEST] - action selectMercadoria passing args', () async {
     var mercadoria = MercadoriasEnum.Cenoura;
-    when(navigatorMock.pushNamed('/mercadoria', arguments: mercadoria))
+
+    when(navigatorMock.pushNamed('/mercadoria',
+            arguments: anyNamed('arguments')))
         .thenAnswer((_) async => {});
 
     await controller.selectMercadoria(mercadoria: mercadoria);
-    verify(navigatorMock.pushNamed('/mercadoria', arguments: mercadoria))
+    verify(navigatorMock.pushNamed('/mercadoria',
+            arguments: anyNamed('arguments')))
         .called(1);
   });
   test('[TEST] - observable lista mercadorias is enum values', () {
-    expect(controller.mercadorias, MercadoriasEnum.values);
+    expect(controller.mercadorias.length,
+        equals(MercadoriasEnum.values.length - 1));
   });
 }

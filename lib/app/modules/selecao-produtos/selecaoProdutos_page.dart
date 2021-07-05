@@ -53,35 +53,25 @@ class SelecaoProdutosPageState
                       itemCount: controller.mercadorias.length),
                 ),
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(32),
-                    topRight: Radius.circular(32)),
-                child: Material(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(32),
-                          topRight: Radius.circular(32)),
-                      side: BorderSide(color: Colors.grey)),
-                  elevation: 8,
-                  child: Container(
-                    padding: EdgeInsets.all(8),
-                    width: MediaQuery.of(context).size.width,
-                    child: Column(
-                      children: [
-                        Text(
-                          'Não Encontrou seu item? Clique aqui:',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        ElevatedButton.icon(
-                            onPressed: controller.selectMercadoria,
-                            icon: Icon(Icons.camera_alt),
-                            label: Text(
-                              'Adicionar manualmente',
-                              style: TextStyle(fontSize: 16),
-                            ))
-                      ],
-                    ),
+              Material(
+                elevation: 8,
+                child: Container(
+                  padding: EdgeInsets.all(8),
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    children: [
+                      Text(
+                        'Não Encontrou seu item? Clique aqui:',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      ElevatedButton.icon(
+                          onPressed: controller.selectMercadoria,
+                          icon: Icon(Icons.camera_alt),
+                          label: Text(
+                            'Adicionar manualmente',
+                            style: TextStyle(fontSize: 16),
+                          ))
+                    ],
                   ),
                 ),
               )
